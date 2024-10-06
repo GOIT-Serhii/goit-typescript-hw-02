@@ -1,6 +1,15 @@
+import { Result } from "../App/App.types";
 import css from "./ImageCard.module.css";
 
-export default function ImageCard({ item, openModal }) {
+interface ImageCardProps {
+  item: Result;
+  openModal: (valueSrc: string, descr: string) => void;
+}
+
+export default function ImageCard({
+  item,
+  openModal,
+}: ImageCardProps): JSX.Element {
   return (
     <div>
       <img

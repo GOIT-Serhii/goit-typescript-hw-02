@@ -3,7 +3,11 @@ import { Field, Form, Formik } from "formik";
 import { FaSearch } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function SearchBar({ onSearch }) {
+interface SearchBarProps {
+  onSearch: (newTopic: string) => void;
+}
+
+export default function SearchBar({ onSearch }: SearchBarProps): JSX.Element {
   return (
     <header className={css.header}>
       <Formik
